@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="Fynix Edu menyediakan kelas online Sains & Matematik untuk Tahun 4 hingga Tingkatan 5, serta worksheet pembelajaran dengan pembayaran FPX/DuitNow melalui ToyyibPay." />
+  <meta property="og:title" content="Fynix Edu | Faham Konsep, Skor Result" />
+  <meta property="og:description" content="Kelas online Sains & Matematik, worksheet digital dan pendaftaran yang lebih mudah." />
+  <meta property="og:type" content="website" />
+  <title>Fynix Edu | Faham Konsep, Skor Result</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#0a0a0a;
+      --ink-2:#161616;
+      --gold:#d69a2d;
+      --gold-2:#f0c86f;
+      --paper:#f7f4ed;
+      --paper-2:#fffdf8;
+      --muted:#6d6a63;
+      --line:rgba(10,10,10,.12);
+      --radius:22px;
+      --shadow:0 20px 50px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    img,svg{max-width:100%;display:block}
+    .container{width:min(1160px,calc(100% - 36px));margin-inline:auto}
+    .topbar{background:var(--gold);color:#111;font-size:.9rem;text-align:center;padding:9px 16px;font-weight:700}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(247,244,237,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.07)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:22px}
+    .brand{display:flex;align-items:center;gap:11px;font-family:"Manrope",sans-serif;font-weight:800;letter-spacing:-.03em}
+    .brand-mark{width:42px;height:42px;border-radius:50%;background:#050505;border:1px solid rgba(214,154,45,.6);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+    .brand-mark svg{width:29px;height:29px}
+    .brand-text small{display:block;font-family:"DM Sans",sans-serif;font-size:.62rem;letter-spacing:.16em;color:var(--muted);font-weight:700;margin-top:-2px}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:.95rem;font-weight:600}
+    .nav-links a:hover{color:#9b6814}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 20px;font-weight:700;border:1px solid transparent;transition:.2s ease;cursor:pointer}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-dark{background:var(--ink);color:#fff;box-shadow:0 10px 25px rgba(0,0,0,.14)}
+    .btn-dark:hover{background:#222}
+    .btn-gold{background:var(--gold);color:#101010}
+    .btn-light{background:transparent;border-color:rgba(255,255,255,.26);color:#fff}
+    .btn-outline{border-color:var(--line);background:rgba(255,255,255,.48)}
+    .menu-btn{display:none;border:0;background:transparent;font-size:1.7rem;line-height:1}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:white}
+    .hero:before{content:"";position:absolute;inset:-20% auto auto 58%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(214,154,45,.35),rgba(214,154,45,0) 68%)}
+    .hero:after{content:"";position:absolute;inset:auto auto -330px -220px;width:650px;height:650px;border:1px solid rgba(214,154,45,.28);border-radius:50%;box-shadow:0 0 0 80px rgba(214,154,45,.035),0 0 0 160px rgba(214,154,45,.025)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center;padding:88px 0 92px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.16);padding:7px 12px;border-radius:999px;color:#f2d795;font-weight:700;font-size:.82rem;background:rgba(255,255,255,.04)}
+    .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 5px rgba(214,154,45,.13)}
+    h1,h2,h3{font-family:"Manrope",sans-serif;letter-spacing:-.045em;line-height:1.08;margin:0}
+    h1{font-size:clamp(2.9rem,6.3vw,5.9rem);max-width:840px;margin-top:22px}
+    .gold-text{color:var(--gold-2)}
+    .hero p{font-size:clamp(1.05rem,1.8vw,1.24rem);color:#d5d2ca;max-width:650px;margin:24px 0 30px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .micro{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:#bdb9b0;font-size:.88rem}
+    .micro span{display:flex;align-items:center;gap:7px}
+    .check{color:var(--gold-2);font-weight:900}
+    .hero-card{background:linear-gradient(180deg,#fffdf8,#f3ede1);color:var(--ink);padding:22px;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg);border:1px solid rgba(255,255,255,.6)}
+    .screen{border-radius:20px;background:#161616;color:#fff;padding:20px;position:relative;overflow:hidden;min-height:430px;display:flex;flex-direction:column;justify-content:space-between}
+    .screen:before{content:"";position:absolute;right:-70px;top:-90px;width:240px;height:240px;border-radius:50%;background:rgba(214,154,45,.18)}
+    .screen-head{display:flex;align-items:center;justify-content:space-between;position:relative}
+    .tiny-brand{display:flex;align-items:center;gap:9px;font-weight:800}
+    .tiny-dot{width:28px;height:28px;background:var(--gold);border-radius:50%;display:grid;place-items:center;color:#111;font-size:.72rem}
+    .live-pill{font-size:.72rem;padding:6px 9px;border-radius:999px;background:#2d2d2d;color:#e8e5de}
+    .lesson{position:relative;background:#fff;color:#141414;border-radius:18px;padding:23px;margin-top:36px;box-shadow:0 16px 30px rgba(0,0,0,.2)}
+    .lesson small{font-weight:800;color:#8c671c;letter-spacing:.08em}
+    .lesson h3{font-size:1.55rem;margin:8px 0 12px}
+    .diagram{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}
+    .diagram div{border-radius:13px;background:#f1eadb;padding:15px 8px;text-align:center;font-weight:800;font-size:.82rem;min-height:86px;display:grid;place-items:center}
+    .lesson-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:.8rem;color:#6d685e}
+    .screen-bottom{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+    .screen-bottom div{background:#232323;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:12px 9px;font-size:.78rem;color:#cfcac0;text-align:center}
+    section{padding:84px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:#9a6a18;margin-bottom:10px}
+    h2{font-size:clamp(2rem,4vw,3.35rem);max-width:760px}
+    .section-copy{max-width:520px;color:var(--muted);font-size:1rem;margin:0}
+    .trust{background:#fffdf8;border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .trust-card{border:1px solid var(--line);background:#fff;border-radius:18px;padding:23px}
+    .trust-card strong{display:block;font-family:"Manrope",sans-serif;font-size:1.2rem;margin-bottom:5px}
+    .trust-card span{font-size:.91rem;color:var(--muted)}
+    .programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .program-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;min-height:300px;position:relative;overflow:hidden}
+    .program-card.featured{background:var(--ink);color:#fff;border-color:#191919}
+    .program-card.featured:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(214,154,45,.2);right:-70px;top:-80px}
+    .icon{width:48px;height:48px;border-radius:15px;background:#f1e5cd;display:grid;place-items:center;font-size:1.4rem;margin-bottom:30px}
+    .featured .icon{background:rgba(214,154,45,.15)}
+    .program-card h3{font-size:1.55rem;margin-bottom:11px;position:relative;z-index:1}
+    .program-card p{color:var(--muted);margin:0 0 20px}
+    .featured p{color:#c7c4bd}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+    .tag{font-size:.78rem;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:6px 9px;background:#faf8f2}
+    .featured .tag{background:#202020;border-color:#353535;color:#ddd}
+    .band{padding:0}
+    .band-inner{background:var(--gold);border-radius:28px;padding:34px 38px;display:flex;align-items:center;justify-content:space-between;gap:28px;box-shadow:var(--shadow)}
+    .band-inner h3{font-size:clamp(1.5rem,3vw,2.25rem);max-width:650px}
+    .band-inner p{margin:6px 0 0;color:#4d3810}
+    .shop{background:#efe8dc}
+    .shop-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+    .filter{border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.6);border-radius:999px;padding:9px 13px;font-weight:700;font-size:.86rem;cursor:pointer}
+    .filter.active{background:var(--ink);color:#fff}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 34px rgba(48,35,12,.06)}
+    .cover{aspect-ratio:1.42/1;background:linear-gradient(145deg,#171717,#050505);color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .cover:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:28px solid rgba(214,154,45,.13);right:-45px;bottom:-75px}
+    .cover .level{font-size:.72rem;letter-spacing:.12em;color:#efcd87;font-weight:800;text-transform:uppercase;position:relative;z-index:1}
+    .cover strong{font-family:"Manrope",sans-serif;font-size:1.55rem;max-width:240px;position:relative;z-index:1;line-height:1.05}
+    .product-body{padding:20px;display:flex;flex-direction:column;gap:13px;flex:1}
+    .product-meta{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .price{font-family:"Manrope",sans-serif;font-size:1.42rem;font-weight:800}
+    .pages{font-size:.8rem;color:var(--muted)}
+    .product p{margin:0;color:var(--muted);font-size:.92rem}
+    .product .btn{margin-top:auto;border-radius:14px;width:100%}
+    .payment-note{display:flex;align-items:center;justify-content:center;gap:10px;color:#6d6559;font-size:.86rem;margin-top:25px;text-align:center}
+    .payment-note strong{color:#1c1c1c}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+    .step{counter-increment:step;border-top:2px solid #1a1a1a;padding-top:20px}
+    .step:before{content:"0" counter(step);display:inline-block;font-family:"Manrope",sans-serif;color:#a56e12;font-weight:800;margin-bottom:34px}
+    .step h3{font-size:1.25rem;margin-bottom:8px}
+    .step p{margin:0;color:var(--muted);font-size:.92rem}
+    .founder{background:var(--ink);color:#fff}
+    .founder-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:center}
+    .founder-card{border:1px solid rgba(255,255,255,.13);border-radius:28px;padding:30px;background:linear-gradient(160deg,#1f1f1f,#0c0c0c);min-height:360px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .founder-card:after{content:"F";position:absolute;right:-20px;bottom:-85px;font-family:"Manrope",sans-serif;font-size:19rem;line-height:1;color:rgba(214,154,45,.09);font-weight:800}
+    .avatar{width:84px;height:84px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:#111;font-family:"Manrope",sans-serif;font-size:2rem;font-weight:800}
+    .founder-card strong{font-family:"Manrope",sans-serif;font-size:1.6rem;position:relative;z-index:1}
+    .founder-card span{color:#bdb9b0;position:relative;z-index:1}
+    .founder h2{margin-bottom:20px}
+    .founder p{color:#c9c6bf;max-width:650px}
+    .credentials{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+    .credential{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 14px;color:#e6e2d9;font-size:.88rem;background:rgba(255,255,255,.025)}
+    .faq-list{max-width:850px;margin-inline:auto}
+    details{border-bottom:1px solid var(--line);padding:19px 0}
+    summary{cursor:pointer;font-family:"Manrope",sans-serif;font-weight:700;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-size:1.3rem;color:#9a6a18}
+    details[open] summary:after{content:"−"}
+    details p{color:var(--muted);margin:13px 0 4px;max-width:760px}
+    .cta{padding-top:20px}
+    .cta-inner{background:linear-gradient(125deg,#121212,#020202);border-radius:30px;padding:54px;color:#fff;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;position:relative;overflow:hidden}
+    .cta-inner:before{content:"";position:absolute;right:-120px;top:-190px;width:430px;height:430px;border-radius:50%;border:70px solid rgba(214,154,45,.14)}
+    .cta-inner h2{position:relative;z-index:1}
+    .cta-inner p{color:#c5c1b9;max-width:630px;position:relative;z-index:1}
+    .cta-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+    footer{padding:38px 0 110px;color:#716d65;font-size:.88rem}
+    .footer-grid{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:28px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px}
+    .wa-float{position:fixed;right:20px;bottom:20px;z-index:60;background:#111;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:13px 18px;font-weight:800;box-shadow:0 15px 35px rgba(0,0,0,.25);display:flex;align-items:center;gap:9px}
+    .wa-float b{color:#78e09d}
+    @media (max-width:980px){
+      .hero-grid,.founder-grid,.cta-inner{grid-template-columns:1fr}
+      .hero-card{max-width:620px;margin-inline:auto;transform:none}
+      .trust-grid,.steps{grid-template-columns:repeat(2,1fr)}
+      .programs-grid,.product-grid{grid-template-columns:repeat(2,1fr)}
+      .cta-actions{justify-content:flex-start}
+    }
+    @media (max-width:760px){
+      .nav-links{display:none;position:absolute;left:18px;right:18px;top:66px;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      .nav .btn.nav-cta{display:none}
+      .hero-grid{padding:64px 0 72px;gap:40px}
+      h1{font-size:clamp(2.7rem,14vw,4.5rem)}
+      section{padding:65px 0}
+      .section-head{display:block}
+      .section-copy{margin-top:14px}
+      .trust-grid,.programs-grid,.product-grid,.steps,.credentials{grid-template-columns:1fr}
+      .band-inner{display:block;padding:30px}
+      .band-inner .btn{margin-top:18px}
+      .cta-inner{padding:36px 28px}
+      .footer-grid{display:block}
+      .footer-links{margin-top:14px}
+      .wa-float span{display:none}
+      .wa-float{padding:14px;width:52px;height:52px;justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Kelas online Sains & Matematik • Tahun 4 hingga Tingkatan 5</div>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Fynix Edu home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M47 12c-7 2-14 7-18 12 8-3 14-3 20-1-9 2-18 7-23 14 8-3 15-3 22-1-9 1-18 5-25 11 8-2 15-1 20 1-6 1-12 3-17 6" stroke="#D69A2D" stroke-width="3" stroke-linecap="round"/>
+            <path d="M25 19c-6 5-10 11-11 18 4-4 8-7 13-9-5 6-8 12-8 19 3-3 6-6 10-8" stroke="#F0C86F" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">Fynix Edu<small>ONLINE TUITION</small></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#kelas">Kelas</a>
+        <a href="#worksheet">Worksheet</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn btn-dark nav-cta" href="https://wa.me/60132291612?text=Assalamualaikum%2C%20saya%20nak%20tanya%20tentang%20kelas%20Fynix%20Edu." target="_blank" rel="noopener">Daftar Kelas</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Pembelajaran online yang fokus pada konsep</span>
+          <h1>Faham Konsep.<br><span class="gold-text">Skor Result.</span></h1>
+          <p>Kelas online Sains & Matematik untuk Tahun 4 hingga Tingkatan 5, disusun supaya pelajar bukan sekadar hafal jawapan tetapi betul-betul faham cara berfikir.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="https://wa.me/60132291612?text=Assalamualaikum%2C%20saya%20berminat%20nak%20daftar%20kelas%20online%20Fynix%20Edu.%20Boleh%20share%20jadual%20dan%20yuran%3F" target="_blank" rel="noopener">Daftar Kelas Online →</a>
+            <a class="btn btn-light" href="#worksheet">Beli Worksheet</a>
+          </div>
+          <div class="micro">
+            <span><b class="check">✓</b> Online dari rumah</span>
+            <span><b class="check">✓</b> Sains & Matematik</span>
+            <span><b class="check">✓</b> Pembayaran FPX / DuitNow</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Preview kelas Fynix Edu">
+          <div class="screen">
+            <div class="screen-head">
+              <div class="tiny-brand"><span class="tiny-dot">F</span>FYNIX EDU</div>
+              <span class="live-pill">KELAS ONLINE</span>
+            </div>
+            <div class="lesson">
+              <small>SAINS • ULANGKAJI</small>
+              <h3>Tumbuhan: Cara Pembiakan</h3>
+              <p style="margin:0;color:#655f56;font-size:.9rem">Visual ringkas untuk bantu pelajar nampak hubungan antara konsep.</p>
+              <div class="diagram">
+                <div>🌱<br>Biji Benih</div>
+                <div>🌿<br>Spora</div>
+                <div>🪴<br>Batang</div>
+              </div>
+              <div class="lesson-footer"><span>Faham dahulu</span><strong>→ baru skor</strong></div>
+            </div>
+            <div class="screen-bottom"><div>Konsep</div><div>Latihan</div><div>Ulangkaji</div></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="trust">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-card"><strong>Tahun 4 → Ting. 5</strong><span>Julat pembelajaran yang jelas untuk pelajar sekolah rendah dan menengah.</span></div>
+          <div class="trust-card"><strong>Sains + Matematik</strong><span>Fokus pada subjek teras dengan pendekatan kefahaman konsep.</span></div>
+          <div class="trust-card"><strong>100% Online</strong><span>Belajar dari rumah dengan bahan pembelajaran digital dan sesi online.</span></div>
+          <div class="trust-card"><strong>Worksheet Digital</strong><span>Latihan untuk preschool, transisi Tahun 1 dan ulangkaji Sains.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kelas">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Program Fynix Edu</div><h2>Pilih fokus pembelajaran yang sesuai.</h2></div>
+          <p class="section-copy">Struktur laman ini memudahkan ibu bapa terus faham apa yang ditawarkan, pilih program dan daftar tanpa perlu lompat antara banyak pautan.</p>
+        </div>
+        <div class="programs-grid">
+          <article class="program-card featured">
+            <div class="icon">🔬</div>
+            <h3>Kelas Sains Online</h3>
+            <p>Fokus konsep, visual, latihan dan ulangkaji mengikut tahap. Sesuai untuk bina asas dan persediaan peperiksaan.</p>
+            <div class="tags"><span class="tag">Tahun 4–6</span><span class="tag">Tingkatan 1–5</span><span class="tag">Online</span></div>
+          </article>
+          <article class="program-card">
+            <div class="icon">➗</div>
+            <h3>Kelas Matematik Online</h3>
+            <p>Penerangan langkah demi langkah, latihan berstruktur dan teknik menyelesaikan soalan dengan lebih yakin.</p>
+            <div class="tags"><span class="tag">Tahun 4–6</span><span class="tag">Tingkatan 1–5</span></div>
+          </article>
+          <article class="program-card">
+            <div class="icon">📚</div>
+            <h3>Ulangkaji Intensif</h3>
+            <p>Sesi ulangkaji yang menghubungkan topik terdahulu supaya jurang pemahaman dapat dikenal pasti sebelum bergerak ke topik baru.</p>
+            <div class="tags"><span class="tag">Konsep</span><span class="tag">Latihan</span><span class="tag">Revision</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="container">
+        <div class="band-inner">
+          <div><h3>Tak pasti kelas mana sesuai untuk anak?</h3><p>Beritahu tahun / tingkatan dan subjek. Fynix Edu boleh cadangkan pilihan yang sesuai.</p></div>
+          <a class="btn btn-dark" href="https://wa.me/60132291612?text=Assalamualaikum%2C%20saya%20nak%20tanya%20kelas%20yang%20sesuai%20untuk%20anak%20saya." target="_blank" rel="noopener">Tanya Fynix Edu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="worksheet">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Worksheet Store</div><h2>Pilih worksheet, bayar terus, siap.</h2></div>
+          <p class="section-copy">Produk sedia ada dikumpulkan dalam satu katalog. Setiap butang checkout membawa terus ke halaman pembayaran ToyyibPay rasmi Fynix Edu.</p>
+        </div>
+        <div class="shop-toolbar" aria-label="Filter worksheet">
+          <button class="filter active" data-filter="all">Semua</button>
+          <button class="filter" data-filter="preschool">Preschool</button>
+          <button class="filter" data-filter="transisi">Transisi Tahun 1</button>
+          <button class="filter" data-filter="sains">Sains</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product" data-category="preschool">
+            <div class="cover"><span class="level">Preschool</span><strong>Preschool's Worksheet</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM6</span><span class="pages">108 muka surat</span></div><p>Latihan interaktif asas untuk pembelajaran awal.</p><a class="btn btn-dark" href="https://toyyibpay.com/PRESCHOOL-S-WORKSHEET" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="sains">
+            <div class="cover"><span class="level">Sains • Tahun 2</span><strong>Ulangkaji Sains Tahun 2</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM8</span><span class="pages">26 muka surat</span></div><p>Latihan ulangkaji Sains yang ringkas dan fokus.</p><a class="btn btn-dark" href="https://toyyibpay.com/ULANGKAJI-SAINS-TAHUN-2" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="sains">
+            <div class="cover"><span class="level">Sains • Tahun 3</span><strong>Ulangkaji Sains Tahun 3</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM8</span><span class="pages">26 muka surat</span></div><p>Latihan ulangkaji untuk mengukuhkan konsep utama Sains Tahun 3.</p><a class="btn btn-dark" href="https://toyyibpay.com/WORKSHEET-TAHUN3" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="transisi">
+            <div class="cover"><span class="level">Transisi • Tahun 1</span><strong>English</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM3</span><span class="pages">20 muka surat</span></div><p>Latihan English untuk persediaan masuk Tahun 1.</p><a class="btn btn-dark" href="https://toyyibpay.com/TRANSISI-TAHUN-1-ENGLISH" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="transisi sains">
+            <div class="cover"><span class="level">Transisi • Tahun 1</span><strong>Sains</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM3</span><span class="pages">20 muka surat</span></div><p>Latihan pengenalan Sains yang sesuai untuk fasa transisi.</p><a class="btn btn-dark" href="https://toyyibpay.com/TRANSISI-TAHUN-1-SAINS" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="transisi">
+            <div class="cover"><span class="level">Transisi • Tahun 1</span><strong>Matematik</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM3</span><span class="pages">30 muka surat</span></div><p>Latihan Matematik asas untuk membina keyakinan sebelum Tahun 1.</p><a class="btn btn-dark" href="https://toyyibpay.com/TRANSISI-TAHUN-1-MATEMATIK" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="transisi">
+            <div class="cover"><span class="level">Transisi • Tahun 1</span><strong>Bahasa Melayu</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">RM3</span><span class="pages">20 muka surat</span></div><p>Latihan Bahasa Melayu untuk membantu persediaan awal sekolah rendah.</p><a class="btn btn-dark" href="https://toyyibpay.com/TRANSISI-TAHUN-1-BAHASA-MELAYU" target="_blank" rel="noopener">Bayar dengan ToyyibPay →</a></div>
+          </article>
+          <article class="product" data-category="sains">
+            <div class="cover"><span class="level">Sains • Tahun 4</span><strong>Worksheet Sains Tahun 4</strong></div>
+            <div class="product-body"><div class="product-meta"><span class="price">Semak</span><span class="pages">Produk terbaru</span></div><p>Worksheet Sains Tahun 4 turut disenaraikan dalam pautan rasmi Fynix Edu.</p><a class="btn btn-outline" href="https://linktr.ee/farhaneem.n" target="_blank" rel="noopener">Semak di Linktree →</a></div>
+          </article>
+        </div>
+        <div class="payment-note"><span>🔒</span><span>Checkout sedia ada menggunakan <strong>FPX / DuitNow melalui ToyyibPay</strong>. Harga di atas ialah harga produk sebelum caj pentadbiran gateway jika dikenakan.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Aliran pendaftaran</div><h2>Dari minat ke kelas dalam beberapa langkah.</h2></div></div>
+        <div class="steps">
+          <div class="step"><h3>Pilih program</h3><p>Pilih Sains, Matematik atau worksheet berdasarkan tahap pelajar.</p></div>
+          <div class="step"><h3>Daftar / checkout</h3><p>Untuk kelas, hubungi terus melalui WhatsApp. Untuk worksheet, tekan butang ToyyibPay.</p></div>
+          <div class="step"><h3>Buat pembayaran</h3><p>Bayaran worksheet diproses melalui halaman rasmi ToyyibPay menggunakan FPX / DuitNow.</p></div>
+          <div class="step"><h3>Terima akses</h3><p>Maklumat kelas atau bahan digital boleh dihantar mengikut proses semasa Fynix Edu.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder" id="tentang">
+      <div class="container founder-grid">
+        <div class="founder-card">
+          <div class="avatar">FN</div>
+          <div><strong>Farhaneem Norazman</strong><br><span>Founder • Fynix Edu</span></div>
+        </div>
+        <div>
+          <div class="kicker" style="color:#e1b85e">Tentang pengasas</div>
+          <h2>Pengalaman akademik + pengalaman mengajar.</h2>
+          <p>Profil awam Farhaneem menunjukkan pengalaman sebagai tutor akademik dan pensyarah sambilan, dengan latar belakang pendidikan di Open University Malaysia, Universiti Teknikal Malaysia Melaka dan Universiti Putra Malaysia.</p>
+          <div class="credentials">
+            <div class="credential">Postgraduate Diploma in Education • OUM</div>
+            <div class="credential">Master's Degree • UTeM</div>
+            <div class="credential">Bachelor's Degree • UPM</div>
+            <div class="credential">Academic tutoring & teaching experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head" style="justify-content:center;text-align:center"><div><div class="kicker">Soalan biasa</div><h2>Maklumat sebelum daftar.</h2></div></div>
+        <div class="faq-list">
+          <details><summary>Kelas Fynix Edu untuk umur / tahap mana?</summary><p>Profil Fynix Edu menyatakan kelas online Sains & Matematik untuk Tahun 4 hingga Tingkatan 5. Untuk jadual dan kumpulan yang sedang dibuka, hubungi Fynix Edu terus melalui WhatsApp.</p></details>
+          <details><summary>Macam mana nak daftar kelas?</summary><p>Tekan butang “Daftar Kelas”, beritahu tahun / tingkatan pelajar dan subjek yang diperlukan. Fynix Edu boleh berkongsi jadual serta yuran semasa.</p></details>
+          <details><summary>Macam mana pembayaran worksheet dibuat?</summary><p>Setiap worksheet mempunyai butang checkout yang membawa terus ke bill ToyyibPay rasmi. Halaman pembayaran menyokong online banking melalui FPX / DuitNow.</p></details>
+          <details><summary>Adakah harga website ini termasuk caj gateway?</summary><p>Harga RM yang dipaparkan ialah harga bill produk berdasarkan halaman ToyyibPay semasa. ToyyibPay mungkin menambah caj pentadbiran semasa checkout.</p></details>
+          <details><summary>Saya nak worksheet Sains Tahun 4.</summary><p>Produk itu disenaraikan pada Linktree rasmi Fynix Edu. Gunakan butang “Semak di Linktree” sementara pautan checkout terus belum dimasukkan pada katalog ini.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner">
+          <div><div class="kicker" style="color:#e8c676">Fynix Edu</div><h2>Belajar dengan lebih jelas. Daftar dengan lebih mudah.</h2><p>Satu laman untuk kelas, worksheet, pembayaran dan pertanyaan ibu bapa. Ringkas untuk pelanggan, mudah diurus untuk Fynix Edu.</p></div>
+          <div class="cta-actions"><a class="btn btn-gold" href="https://wa.me/60132291612?text=Assalamualaikum%2C%20saya%20berminat%20dengan%20Fynix%20Edu." target="_blank" rel="noopener">WhatsApp Sekarang</a><a class="btn btn-light" href="https://www.threads.com/@fynixeducation" target="_blank" rel="noopener">Threads</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Fynix Edu • Faham Konsep, Skor Result</div>
+      <div class="footer-links"><a href="https://linktr.ee/farhaneem.n" target="_blank" rel="noopener">Linktree</a><a href="https://www.threads.com/@fynixeducation" target="_blank" rel="noopener">Threads</a><a href="tel:+60132291612">013-229 1612</a></div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/60132291612?text=Assalamualaikum%2C%20saya%20nak%20tanya%20tentang%20Fynix%20Edu." target="_blank" rel="noopener" aria-label="WhatsApp Fynix Edu"><b>●</b><span>WhatsApp</span></a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const filters = document.querySelectorAll('.filter');
+    const products = document.querySelectorAll('.product');
+    filters.forEach(btn => btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      products.forEach(product => {
+        const cats = product.dataset.category.split(' ');
+        product.style.display = filter === 'all' || cats.includes(filter) ? 'flex' : 'none';
+      });
+    }));
+  </script>
+</body>
+</html>
